@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Space Collector 2D</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="game-wrapper">
+    <div id="menu-screen" class="screen">
+      <h1 class="title">SPACE <span>COLLECTOR</span></h1>
+      <p class="subtitle">Kumpulkan kristal energi sebanyak mungkin dalam 30 detik!</p>
+
+      <form id="start-form">
+        <div class="field">
+          <label for="username">Username</label>
+          <input type="text" id="username" placeholder="Masukkan username" required autocomplete="off">
+        </div>
+        <div class="field">
+          <label for="wa">Nomor WhatsApp</label>
+          <input type="tel" id="wa" placeholder="08xxxxxxxxxx" pattern="[0-9]{9,15}" required>
+        </div>
+        <button type="submit" class="btn btn-start">🚀 Mulai Bermain</button>
+      </form>
+
+      <button id="btn-menu-leaderboard" class="btn btn-secondary">🏆 Lihat Leaderboard</button>
+    </div>
+
+    <div id="game-screen" class="screen hidden">
+      <div class="hud">
+        <div class="hud-box">SKOR: <span id="current-score">0</span></div>
+        <div class="hud-box">WAktu: <span id="timer-display">30s</span></div>
+      </div>
+
+      <div class="canvas-container">
+        <canvas id="gameCanvas" width="360" height="380"></canvas>
+      </div>
+
+      <div class="controls">
+        <button id="btn-left" class="control-btn">◀ Kiri</button>
+        <button id="btn-right" class="control-btn">Kanan ▶</button>
+      </div>
+    </div>
+
+    <div id="over-screen" class="screen hidden">
+      <h2 class="gameover-title">GAME OVER</h2>
+      <div class="score-card">
+        <p>Skor Akhir Kamu</p>
+        <span id="final-score">0</span>
+      </div>
+      <div class="action-buttons">
+        <button id="btn-restart" class="btn btn-start">🔄 Main Lagi</button>
+        <button id="btn-over-leaderboard" class="btn btn-secondary">🏆 Leaderboard</button>
+      </div>
+    </div>
+
+    <div id="leaderboard-screen" class="screen hidden">
+      <h2>🏆 TOP 10 PLAYER</h2>
+      <div class="leaderboard-box">
+        <ol id="leaderboard-list">
+          <li class="loading">Memuat data leaderboard...</li>
+        </ol>
+      </div>
+      <button id="btn-back-menu" class="btn btn-secondary">⬅ Kembali ke Menu</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
